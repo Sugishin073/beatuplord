@@ -1,0 +1,18 @@
+<!-- app/views/beats/index.html.erb -->
+<h1>ビート一覧</h1>
+
+<%= link_to "新しいビートを追加", new_beat_path %>
+
+<ul>
+  <% @beats.each do |beat| %>
+    <li>
+      <strong><%= beat.title %></strong><br>
+      <% if beat.audio_file.attached? %>
+        <audio controls>
+          <source src="<%= url_for(beat.audio_file) %>" type="<%= beat.audio_file.content_type %>">
+          Your browser does not support the audio element.
+        </audio>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
