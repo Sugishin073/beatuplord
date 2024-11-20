@@ -8,10 +8,17 @@
     <li>
       <strong><%= beat.title %></strong><br>
       <% if beat.audio_file.attached? %>
-        <audio controls>
-          <source src="<%= url_for(beat.audio_file) %>" type="<%= beat.audio_file.content_type %>">
-          Your browser does not support the audio element.
+        <!-- カスタムオーディオプレイヤー -->
+        <div>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').play()">▶︎ 再生</button>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').pause()">⏸ 停止</button>
+        </div>
+        <audio id="audio-<%= beat.id %>" style="display: none;">
+          <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">
+          お使いのブラウザはオーディオ再生に対応していません。
         </audio>
+      <% else %>
+        <p>音声ファイルがありません。</p>
       <% end %>
     </li>
   <% end %>
