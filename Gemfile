@@ -70,3 +70,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'image_processing', '~> 1.2' # Active Storageが依存する
+gem 'mimemagic', '~> 0.4.3' # MIMEタイプの問題がある場合に備えたもの
