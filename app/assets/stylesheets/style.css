@@ -1,5 +1,29 @@
 .blank_space {
-  color: rgb(28, 28, 157);
-  padding: 60px 1px 20px 1px;
-  font-size: 1em;
+  color: rgb(44, 161, 85);
+  padding: 90px 1px 1px 1px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.navbar_brand {
+  color: rgb(95, 59, 194);
+  text-decoration: none;
+  font-family: cursive;
+  font-size: 1.5em;
+}
+
+a.btn-border {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+  margin: 1px 1px 20px 10px;
+}
+
+a.btn-border:hover {
+  color: #fff;
+  background: #000;
+}
+
+.buck {
+  background-color: darkgrey;
 }
