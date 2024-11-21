@@ -1,17 +1,20 @@
 <!-- app/views/beats/index.html.erb -->
-<h1>ビート一覧</h1>
 
-<%= link_to "新しいビートを追加", new_beat_path %>
+<h1 class="blank_space"><i class="bi bi-activity"></i> BEAT LISTS <i class="bi bi-activity"></i></h1>
+
+<%= link_to "NEW BEAT UPLOAD", new_beat_path, class:"btn btn-border" %>
 
 <ul>
   <% @beats.each do |beat| %>
+  <div class="card">
+    <div class="card-body">
     <li>
       <strong><%= beat.title %></strong><br>
       <% if beat.audio_file.attached? %>
         <!-- カスタムオーディオプレイヤー -->
         <div>
-          <button onclick="document.getElementById('audio-<%= beat.id %>').play()">▶︎ 再生</button>
-          <button onclick="document.getElementById('audio-<%= beat.id %>').pause()">⏸ 停止</button>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').play()"><i class="bi bi-play-btn"></i> 再生</button>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').pause()"><i class="bi bi-pause-btn-fill"></i> 停止</button>
         </div>
         <audio id="audio-<%= beat.id %>" style="display: none;">
           <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">
@@ -21,5 +24,7 @@
         <p>音声ファイルがありません。</p>
       <% end %>
     </li>
+    </div>
+  </div>
   <% end %>
 </ul>
