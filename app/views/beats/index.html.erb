@@ -10,8 +10,8 @@
       <% if beat.audio_file.attached? %>
         <!-- カスタムオーディオプレイヤー -->
         <div>
-          <button onclick="document.getElementById('audio-<%= beat.id %>').play()">▶︎ 再生</button>
-          <button onclick="document.getElementById('audio-<%= beat.id %>').pause()">⏸ 停止</button>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').play()"><i class="bi bi-play-btn"></i> 再生</button>
+          <button onclick="document.getElementById('audio-<%= beat.id %>').pause()"><i class="bi bi-pause-btn-fill"></i> 停止</button>
         </div>
         <audio id="audio-<%= beat.id %>" style="display: none;">
           <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">
