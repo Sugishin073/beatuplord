@@ -21,7 +21,7 @@ class BeatsController < ApplicationController
   private
 
   def beat_params
-    params.require(:beat).permit(:title, :genre_id, :vibes_id, :audio_file)
+    params.require(:beat).permit(:nickname, :title, :genre_id, :vibes_id, :audio_file).merge(user_id: current_user.id)
   end
   
   def move_to_index
