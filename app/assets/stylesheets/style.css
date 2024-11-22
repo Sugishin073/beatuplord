@@ -1,22 +1,22 @@
-.blank_space {
-  color: rgb(44, 161, 85);
-  padding: 90px 1px 1px 1px;
-  font-size: 2em;
-  text-align: center;
+.topblock{
+
 }
 
-.navbar_brand {
-  color: rgb(95, 59, 194);
-  text-decoration: none;
-  font-family: cursive;
-  font-size: 1.5em;
+.top-btn {
+  width: 400px;
+  height: 400px;
+  display: block;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-bottom: -5%;
+    margin-right: auto;
 }
 
 a.btn-border {
   border: 2px solid #000;
   border-radius: 0;
   background: #fff;
-  margin: 1px 1px 20px 10px;
+  margin: 0px 1px 20px 33px;
 }
 
 a.btn-border:hover {
@@ -25,5 +25,5 @@ a.btn-border:hover {
 }
 
 .buck {
-  background-color: darkgrey;
+  background-color: rgb(204, 203, 203);
 }
