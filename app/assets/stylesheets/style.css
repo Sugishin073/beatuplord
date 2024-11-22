@@ -1,8 +1,11 @@
-.topblock{
-
+body, html {
+  height: 100%;
+  background-color: rgb(204, 203, 203) !important;
 }
 
 header.header {
+  display: flex;
+  align-items: center;
   padding: 10px;
   background-color: #000000;
   position: fixed;
@@ -35,6 +38,94 @@ a.btn-border:hover {
   background: #000;
 }
 
-.buck {
-  background-color: rgb(204, 203, 203);
+.post {
+  color: #5b58ff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100px;
+  border: 2px solid #5b58ff;
+  border-radius: 8px;
+  background-color: #000000;
+  text-align: center;
+  cursor: pointer;
+}
+
+.post:hover {
+  color: #fff;
+  background-color: #5b58ff;
+  border-color: #5b58ff;
+  transition: all 0.3s ease;
+}
+
+/* 全体を中央に配置する親要素 */
+.container {
+  height: calc(100vh - 62px); /* ビューポートの高さからヘッダーの高さを引く */
+  display: flex; /* フレックスボックスを有効にする */
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  height: 100vh; /* ビューポート全体の高さを設定 */
+  flex-direction: column; /* 縦方向に内容を並べる */
+  padding: 20px; /* 余白を追加 */
+  box-sizing: border-box; /* ボックスサイズの調整 */
+  margin-top: 62px; /* ヘッダーの高さ分だけ余白を追加 */
+}
+
+/* フォーム全体のスタイル */
+form {
+  background: #fff; /* 背景色 */
+  padding: 20px; /* 内側の余白 */
+  border: 1px solid #ddd; /* 枠線 */
+  border-radius: 8px; /* 角丸 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+  width: 100%;
+  max-width: 400px; /* 最大幅を指定 */
+}
+
+/* 見出しのスタイル */
+h2 {
+  margin-bottom: 20px; /* 下の余白 */
+  text-align: center; /* テキストを中央揃え */
+  font-size: 24px; /* フォントサイズ */
+  color: #333; /* テキスト色 */
+}
+
+/* ラベルと入力フィールドの間隔を調整 */
+.field {
+  margin-bottom: 15px; /* フィールド間の余白 */
+}
+
+label {
+  display: block; /* ブロック要素として配置 */
+  margin-bottom: 5px; /* 下の余白 */
+  color: #555; /* テキスト色 */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* フィールドを幅いっぱいにする */
+  padding: 8px; /* 内側の余白 */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 4px; /* 角丸 */
+  box-sizing: border-box; /* ボックスサイズを調整 */
+}
+
+/* 送信ボタンのスタイル */
+.actions input[type="submit"] {
+  background-color: #5b58ff; /* 背景色 */
+  color: #fff; /* テキスト色 */
+  padding: 10px 15px; /* 内側の余白 */
+  border: none; /* 枠線なし */
+  border-radius: 4px; /* 角丸 */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  font-size: 16px; /* フォントサイズ */
+  width: 100%; /* ボタンを幅いっぱいにする */
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #4a48d1; /* ホバー時の背景色 */
+  transition: background-color 0.3s ease; /* スムーズな変化 */
 }

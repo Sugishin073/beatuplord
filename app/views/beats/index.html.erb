@@ -1,8 +1,7 @@
 <!-- app/views/beats/index.html.erb -->
-<div class="topblock">
   <%= link_to image_tag("gray_on_trans.png", class:"top-btn"), "#" %>
   <%= link_to "NEW BEAT UPLOAD", new_beat_path, class:"btn btn-border" %>
-</div>
+
 <ul>
   <% @beats.each do |beat| %>
   <div class="card">
@@ -53,7 +52,6 @@
       <% end %>
       <%= javascript_include_tag "audio_player", defer: true %>
     </li>
-    </div>
   </div>
   <% end %>
 </ul>
