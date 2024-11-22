@@ -38,6 +38,11 @@
             value="1" 
             oninput="updateVolume(<%= beat.id %>)"
           >
+
+          <%= beat.genre.name  %>
+
+          <%= beat.vibes.name  %>
+
         </div>
         <audio id="audio-<%= beat.id %>" style="display: none;">
           <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">

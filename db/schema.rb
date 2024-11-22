@@ -41,6 +41,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_20_080709) do
 
   create_table "beats", charset: "utf8mb3", force: :cascade do |t|
     t.string "title"
+    t.integer "genre_id", null: false
+    t.integer "vibes_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
