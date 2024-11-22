@@ -129,3 +129,22 @@ input[type="password"] {
   background-color: #4a48d1; /* ホバー時の背景色 */
   transition: background-color 0.3s ease; /* スムーズな変化 */
 }
+
+.profile-image {
+  border-radius: 50%; /* 丸く表示 */
+  width: 150px;
+  height: 150px;
+}
+
+/* app/assets/stylesheets/application.css */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
