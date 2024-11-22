@@ -1,19 +1,27 @@
 <!-- app/views/beats/new.html.erb -->
 <h1>新しいビートをアップロード</h1>
 
-<%= form_with model: @beat, local: true do |form| %>
+<%= form_with model: @beat, local: true do |f| %>
   <div>
-    <%= form.label :title, "タイトル" %><br>
-    <%= form.text_field :title %>
+    <%= f.label :title, "タイトル" %><br>
+    <%= f.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :audio_file, "オーディオファイル(MP3またはWAV)" %><br>
-    <%= form.file_field :audio_file %>
+  <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+
+  <div>
+  <%= f.collection_select(:vibes_id, Vibes.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+
+  <div>
+    <%= f.label :audio_file, "オーディオファイル(MP3またはWAV)" %><br>
+    <%= f.file_field :audio_file %>
     <p>アップロード可能な形式: MP3, WAV</p>
   </div>
 
   <div>
-    <%= form.submit "アップロード" %>
+    <%= f.submit "アップロード" %>
   </div>
 <% end %>

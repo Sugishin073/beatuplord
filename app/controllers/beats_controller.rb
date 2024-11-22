@@ -20,6 +20,6 @@ class BeatsController < ApplicationController
   private
 
   def beat_params
-    params.require(:beat).permit(:title, :audio_file)
+    params.require(:beat).permit(:title, :genre_id, :vibes_id, :audio_file)
   end
 end
