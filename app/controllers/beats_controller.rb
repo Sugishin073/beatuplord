@@ -1,4 +1,5 @@
 class BeatsController < ApplicationController
+  before_action :move_to_index, except: [:index]
   def index
     @beats = Beat.all
   end
@@ -21,5 +22,11 @@ class BeatsController < ApplicationController
 
   def beat_params
     params.require(:beat).permit(:title, :genre_id, :vibes_id, :audio_file)
+  end
+  
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
