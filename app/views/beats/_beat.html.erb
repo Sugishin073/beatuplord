@@ -1,5 +1,4 @@
 <div class="beatlist">
-
   <!-- プロフィール画像 -->
   <a href="<%= user_path(beat.user.id) %>" class="profile-link">
     <% if beat.user.avatar.attached? %>
@@ -9,27 +8,47 @@
     <% end %>
   </a>
 
+  <a href="<%= user_path(beat.user.id) %>">
+    <%= beat.user.nickname %>
+  </a>
 
-    <a href="<%= user_path(beat.user.id) %>">
-        <%= beat.user.nickname %>
-    </a>
+  <strong><%= beat.title %></strong><br>
 
-    <strong><%= beat.title %></strong><br>
-    
-    <% if beat.audio_file.attached? %>
-      <!-- カスタムオーディオプレイヤー -->
-        <button onclick="document.getElementById('audio-<%= beat.id %>').play()"><i class="bi bi-play-btn"></i> 再生</button>
-        <button onclick="document.getElementById('audio-<%= beat.id %>').pause()"><i class="bi bi-pause-btn-fill"></i> 停止</button>
-        <span id="current-time-<%= beat.id %>">0:00</span>
-        <input type="range" id="seek-bar-<%= beat.id %>" min="0" max="100" value="0" step="1" oninput="updateSeek(<%= beat.id %>)">
-        <label for="volume-bar-<%= beat.id %>"><i class="bi bi-volume-up-fill"></i></label>
-        <input type="range" id="volume-bar-<%= beat.id %>" min="0" max="1" step="0.1" value="1" oninput="updateVolume(<%= beat.id %>)">
-        <%= beat.genre.name %> <%= beat.vibes.name %>
-      <audio id="audio-<%= beat.id %>" style="display: none;">
-        <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">
-        お使いのブラウザはオーディオ再生に対応していません。
-      </audio>
-    <% else %>
-      <p>音声ファイルがありません。</p>
-    <% end %>
+  <% if beat.audio_file.attached? %>
+    <!-- カスタムオーディオプレイヤー -->
+    <button onclick="document.getElementById('audio-<%= beat.id %>').play()"><i class="bi bi-play-btn"></i> 再生</button>
+    <button onclick="document.getElementById('audio-<%= beat.id %>').pause()"><i class="bi bi-pause-btn-fill"></i> 停止</button>
+    <!-- 再生位置バー -->
+          <span id="current-time-<%= beat.id %>">0:00</span>
+          <input 
+            type="range" 
+            id="seek-bar-<%= beat.id %>" 
+            min="0" 
+            max="100" 
+            value="0" 
+            step="1" 
+            oninput="updateSeek(<%= beat.id %>)"
+          >
+
+          <!-- 音量調整バー -->
+          <label for="volume-bar-<%= beat.id %>"><i class="bi bi-volume-up-fill"></i></label>
+          <input 
+            type="range" 
+            id="volume-bar-<%= beat.id %>" 
+            min="0" 
+            max="1" 
+            step="0.1" 
+            value="1" 
+            oninput="updateVolume(<%= beat.id %>)"
+          >
+    <%= beat.genre.name %> <%= beat.vibes.name %>
+
+    <audio id="audio-<%= beat.id %>" style="display: none;">
+      <source src="<%= rails_blob_url(beat.audio_file, disposition: "inline") %>" type="<%= beat.audio_file.content_type %>">
+      お使いのブラウザはオーディオ再生に対応していません。
+    </audio>
+  <% else %>
+    <p>音声ファイルがありません。</p>
+  <% end %>
+  <%= javascript_include_tag "audio_player", defer: true %>
 </div>
