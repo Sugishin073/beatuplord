@@ -18,6 +18,12 @@ class BeatsController < ApplicationController
     end
   end
 
+  def destroy
+    @beat = Beat.find(params[:id])
+    @beat.destroy
+    redirect_to root_path, notice: "ビートを削除しました。"
+  end
+
   private
 
   def beat_params
