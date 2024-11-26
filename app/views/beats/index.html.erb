@@ -3,8 +3,7 @@
 <% if user_signed_in? %>
   <%= link_to "NEW BEAT UPLOAD", new_beat_path, class:"btn btn-border" %>
 <% end %>
-<ul>
+
   <% @beats.each do |beat| %>
   <%= render partial: "beat", locals: { beat: beat } %>
   <% end %>
-</ul>

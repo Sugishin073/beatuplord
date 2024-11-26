@@ -1,6 +1,6 @@
-body, html {
+body.body, html {
   height: 100%;
-  background-color: rgb(204, 203, 203) !important;
+  background-color: rgb(221, 219, 219) !important;
 }
 
 header.header {
@@ -30,7 +30,9 @@ a.btn-border {
   border: 2px solid #000;
   border-radius: 0;
   background: #fff;
-  margin: 0px 1px 20px 33px;
+  margin: 0px 1px 20px 60px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px; /* 角丸 */
 }
 
 a.btn-border:hover {
@@ -147,4 +149,35 @@ input[type="password"] {
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+
+.beatlist {
+  background: linear-gradient(135deg, #fcfcfc, #f4f4f4); /* 背景のグラデーション */
+  border: 2px solid #000000; /* 外枠の色 */
+  border-radius: 15px; /* 角丸 */
+  padding: 20px; /* 内側の余白 */
+  margin: 10px auto; /* 中央寄せ */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ボックスシャドウ */
+  width: 90%; /* 横幅を画面幅の90% */
+  max-width: 1200px; /* 最大幅を1200pxに */
+  display: flex !important; /* 子要素を横並びにする */
+  align-items: center; /* 子要素を縦方向に中央揃え */
+  gap: 20px; /* 子要素間の間隔 */
+}
+
+.beatlist a {
+  color: #333; /* リンクの色 */
+  font-weight: bold; /* 太字 */
+  text-decoration: none; /* 下線を削除 */
+}
+
+.beatlist strong {
+  font-size: 18px; /* タイトルを少し大きく */
+  display: block;
+  margin-top: 10px; /* 上に余白を追加 */
+  color: #2c3e50; /* タイトルの色 */
+}
+
+.mypage {
+
 }
