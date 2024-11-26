@@ -132,19 +132,38 @@ input[type="password"] {
   transition: background-color 0.3s ease; /* スムーズな変化 */
 }
 
+.mypage {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 60px; /* ヘッダーとの距離を確保 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 80%; /* 任意に調整 */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* 子要素を中央揃え */
+}
+
 .profile-image {
-  border-radius: 50%; /* 丸く表示 */
-  width: 150px;
-  height: 150px;
+  border-radius: 50% !important; /* 丸く表示 */
+  width: 150px !important;
+  height: 150px !important;
+  display: block !important;   
+  margin-left: auto !important; 
+  margin-right: auto !important;
+  margin-bottom: 5px;
 }
 
 /* app/assets/stylesheets/application.css */
 .btn-primary {
+  display: inline-block;
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 .btn-primary:hover {
@@ -161,8 +180,11 @@ input[type="password"] {
   width: 90%; /* 横幅を画面幅の90% */
   max-width: 1200px; /* 最大幅を1200pxに */
   display: flex !important; /* 子要素を横並びにする */
-  align-items: center; /* 子要素を縦方向に中央揃え */
+  align-items: flex-start; /* 子要素を上揃え */
   gap: 20px; /* 子要素間の間隔 */
+  box-sizing: border-box; /* ボックスサイズを調整 */
+  flex-wrap: wrap; /* 内容が多くなった場合に折り返しを許可 */
+  align-items: center; /* 子要素を縦方向に中央揃え */
 }
 
 .beatlist a {
@@ -178,6 +200,3 @@ input[type="password"] {
   color: #2c3e50; /* タイトルの色 */
 }
 
-.mypage {
-
-}
