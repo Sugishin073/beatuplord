@@ -51,8 +51,9 @@
     <p>音声ファイルがありません。</p>
   <% end %>
 
-  <!-- 削除リンク -->
-  <%= link_to '削除', delete_beat_path(beat), data: { confirm: '本当に削除しますか？' } %>
-
+  <!-- 自分の投稿にのみ削除リンクを表示 -->
+  <% if current_user == beat.user %>
+    <%= link_to '削除', delete_beat_path(beat), data: { confirm: '本当に削除しますか？' } %>
+  <% end %>
   <%= javascript_include_tag "audio_player", defer: true %>
 </div>
