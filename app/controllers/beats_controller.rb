@@ -1,5 +1,7 @@
 class BeatsController < ApplicationController
   before_action :move_to_index, except: [:index]
+  before_action :set_beat, only: [:show, :edit, :update, :destroy]
+
   def index
     @beats = Beat.includes(:user)
   end
@@ -24,7 +26,26 @@ class BeatsController < ApplicationController
     redirect_to root_path, notice: "ビートを削除しました。"
   end
 
+  def edit
+    @beat = Beat.find(params[:id])
+  end
+
+  def update
+    if @beat.update(beat_params)
+      redirect_to beats_path, notice: "ビートを更新しました。"
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_beat
+    @beat = Beat.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to beats_path, alert: "ビートが見つかりませんでした。"
+  end
+
 
   def beat_params
     params.require(:beat).permit(:title, :genre_id, :vibes_id, :audio_file).merge(user_id: current_user.id)
