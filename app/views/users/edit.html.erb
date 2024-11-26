@@ -1,0 +1,29 @@
+<!-- app/views/users/edit.html.erb -->
+<h2>プロフィール編集</h2>
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div>
+      <h2>フォームにエラーがあります</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nickname %>
+    <%= form.text_field :nickname %>
+  </div>
+
+  <div>
+    <%= form.label :avatar, "プロフィール画像" %>
+    <%= form.file_field :avatar %> <!-- 画像アップロード用のフィールド -->
+  </div>
+
+  <div>
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
