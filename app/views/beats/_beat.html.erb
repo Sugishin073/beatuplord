@@ -1,8 +1,21 @@
 <div class="beatlist">
+
+  <!-- プロフィール画像 -->
+  <a href="<%= user_path(beat.user.id) %>" class="profile-link">
+    <% if beat.user.avatar.attached? %>
+      <%= image_tag rails_blob_path(beat.user.avatar, only_path: true), alt: "プロフィール画像", class: "profile-image-small" %>
+    <% else %>
+      <%= image_tag "default-avatar.png", alt: "デフォルト画像", class: "profile-image-small" %>
+    <% end %>
+  </a>
+
+
     <a href="<%= user_path(beat.user.id) %>">
         <%= beat.user.nickname %>
     </a>
+
     <strong><%= beat.title %></strong><br>
+    
     <% if beat.audio_file.attached? %>
       <!-- カスタムオーディオプレイヤー -->
         <button onclick="document.getElementById('audio-<%= beat.id %>').play()"><i class="bi bi-play-btn"></i> 再生</button>

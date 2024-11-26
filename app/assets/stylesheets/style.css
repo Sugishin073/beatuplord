@@ -200,3 +200,9 @@ input[type="password"] {
   color: #2c3e50; /* タイトルの色 */
 }
 
+.profile-image-small {
+  border-radius: 50% !important; /* 丸く表示 */
+  width: 50px !important;
+  height: 50px !important;
+  display: block !important;
+}
