@@ -206,3 +206,30 @@ input[type="password"] {
   height: 50px !important;
   display: block !important;
 }
+
+.mypage .profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.messages {
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.my-message {
+  text-align: right;
+  background-color: #d1f7d6;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.other-message {
+  text-align: left;
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin: 5px 0;
+}
