@@ -24,6 +24,7 @@ header.header {
     margin-left: auto;
     margin-bottom: -5%;
     margin-right: auto;
+    background-image: image-url("gray_on_trans.png");
 }
 
 a.btn-border {

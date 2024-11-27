@@ -1,5 +1,5 @@
 <!-- app/views/beats/index.html.erb -->
-  <%= link_to image_tag("gray_on_trans.png", class:"top-btn"), "#" %>
+  <%= link_to image_tag asset_path("gray_on_trans.png", class:"top-btn"), "#" %>
 <% if user_signed_in? %>
   <%= link_to "NEW BEAT UPLOAD", new_beat_path, class:"btn btn-border" %>
 <% end %>
