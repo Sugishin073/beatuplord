@@ -142,6 +142,7 @@ input[type="password"] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
   text-align: center; /* 子要素を中央揃え */
 }
 
@@ -205,4 +206,56 @@ input[type="password"] {
   width: 50px !important;
   height: 50px !important;
   display: block !important;
+}
+
+.mypage .profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.messages {
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.my-message {
+  text-align: right;
+  background-color: #d1f7d6;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.other-message {
+  text-align: left;
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.button-container {
+  margin-top: 10px; /* ボタンの上に適度な余白 */
+  display: flex;
+  justify-content: center; /* ボタンを中央揃え */
+  width: 100%; /* 親要素全体をカバー */
+  background: none; /* 背景をリセット */
+  box-shadow: none; /* ボックスの影をリセット */
+  border: none; /* 境界線をリセット */
+  margin: 0; /* 余白をリセット */
+}
+
+
+.message-form .mail_btn {
+  background-color: #007bff !important; /* ボタンの背景色 */
+  color: white !important; /* ボタンの文字色 */
+  padding: 10px 20px !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+  margin-bottom: 5px !important;
+}
+
+.mail_btn:hover {
+  background-color: #0056b3;
 }
