@@ -4,7 +4,7 @@ class BeatsController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @beats = Beat.includes(:user)
+    @beats = Beat.includes(:user).order("created_at DESC")
   end
 
   def new
