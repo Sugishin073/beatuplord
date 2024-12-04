@@ -5,6 +5,7 @@ class BeatsController < ApplicationController
 
   def index
     @beats = Beat.includes(:user).order("created_at DESC")
+    @comment = Comment.new
   end
 
   def new

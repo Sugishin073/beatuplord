@@ -56,5 +56,26 @@
     <%= link_to '削除', delete_beat_path(beat), data: { confirm: '本当に削除しますか？' } %>
     <%= link_to '編集', edit_beat_path(beat) %> <!-- 編集リンク -->
   <% end %>
+
+  <div class="box">
+    <% if user_signed_in? %>
+      <%= form_with(model: [beat, Comment.new], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+  <h4>＜コメント一覧＞</h4>
+  <% beat.comments.includes(:user).each do |comment| %>
+    <p>
+      <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>：</strong>
+      <%= comment.text %>
+    </p>
+  <% end %>
+</div>
+  </div>
+
   <%= javascript_include_tag "audio_player", defer: true %>
 </div>

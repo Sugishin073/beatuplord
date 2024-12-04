@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     member do
       get 'delete', to: 'beats#destroy'
     end
+
+    resources :comments, only: :create
   end
 
   # ユーザーのルートはトップレベルで独立させる
